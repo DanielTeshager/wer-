@@ -1,1 +1,8 @@
 chat copy.py
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+.env
