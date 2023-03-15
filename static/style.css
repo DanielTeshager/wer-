@@ -71,8 +71,11 @@ body {
 #scroll-bottom-btn {
 	position: fixed;
 	right: 30px;
-	bottom: 80px;
+	bottom: 120px;
 	z-index: 100;
+	background: none;
+	color: gray;
+	border: none;
 }
 #chat-form-container {
 	background-color: inherit;
@@ -119,6 +122,12 @@ body {
 	40% {
 		transform: scaleY(1);
 	}
+}
+
+#send-button {
+	background-color: none;
+	border: none;
+	color: gray;
 }
 
 /* Media queries */
