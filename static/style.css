@@ -51,29 +51,3 @@ body {
 	align-items: center;
 	width: 70%;
 }
-.form-control:focus {
-	box-shadow: none;
-}
-.form-control {
-	background-color: #1a1a1a;
-	color: #fff;
-	border: none;
-	border-top-left-radius: 25px;
-	border-bottom-left-radius: 25px;
-	width: 100%;
-}
-#send-button {
-	background-color: #1a1a1a;
-	border-color: #1a1a1a;
-	padding: 0.375rem 0.5rem;
-	margin-left: -1px;
-	border-top-right-radius: 25px;
-	border-bottom-right-radius: 25px;
-}
-#send-button i {
-	color: #fff;
-}
-.btn-primary:hover {
-	background-color: #333;
-	border-color: #333;
-}
