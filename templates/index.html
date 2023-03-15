@@ -2,6 +2,10 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
 		<title>Chatbot Interface</title>
 		<link
 			rel="stylesheet"
@@ -9,115 +13,27 @@
 		/>
 		<link
 			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
 		/>
-		<style>
-			html,
-			body {
-				height: 100%;
-				background-color: #f5f5f5;
-			}
-			.container {
-				display: flex;
-				flex-direction: column;
-				height: 100%;
-				justify-content: center;
-				align-items: center;
-			}
-			#chat-display {
-				flex: 1;
-				overflow-y: scroll;
-				background-color: #fff;
-				padding: 10px;
-				border-radius: 5px;
-				box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-				margin-bottom: 20px;
-				width: 100%;
-			}
-			.message {
-				padding: 10px;
-				border-radius: 5px;
-				box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-				margin-bottom: 10px;
-				max-width: 60%;
-			}
-			.message--sent {
-				background-color: #007bff;
-				color: #fff;
-				align-self: flex-end;
-			}
-			.message--received {
-				background-color: #fff;
-				color: #333;
-				align-self: flex-start;
-			}
-			#chat-form {
-				position: sticky;
-				bottom: 0;
-				background-color: #fff;
-				z-index: 1;
-				padding: 10px;
-				border-radius: 5px;
-				box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-				width: 100%;
-				display: flex;
-				justify-content: space-between;
-			}
-			.form-control:focus {
-				box-shadow: none;
-			}
-			.btn-primary {
-				background-color: #007bff;
-				border-color: #007bff;
-			}
-			.btn-primary:hover {
-				background-color: #0069d9;
-				border-color: #0062cc;
-			}
-			#scroll-up-btn,
-			#scroll-down-btn {
-				position: fixed;
-				z-index: 1;
-				bottom: 60px;
-				width: 50px;
-				height: 50px;
-				background-color: #007bff;
-				color: #fff;
-				border: none;
-				border-radius: 50%;
-				box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-				font-size: 20px;
-				cursor: pointer;
-				transition: background-color 0.3s ease;
-			}
-			#scroll-up-btn:hover,
-			#scroll-down-btn:hover {
-				background-color: #0069d9;
-			}
-			#scroll-up-btn {
-				right: 20px;
-			}
-			#scroll-down-btn {
-				right: 80px;
-			}
-		</style>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='style.css') }}"
+		/>
 	</head>
-
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-			<a class="navbar-brand" href="#">ወሬ :: ChatGPT for Ethiopia 🇪🇹</a>
+			<a class="navbar-brand" href="#">Chatbot Interface</a>
 		</nav>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 mt-5">
-					<div id="chat-display" class="card p-3 mb-3"></div>
-					<div id="chat-messages"></div>
+					<div id="chat-messages" class="card p-3 mb-3"></div>
 					<form id="chat-form">
 						<input
 							type="text"
 							class="form-control"
 							id="chat-input"
-							placeholder="Type your message..."
+							placeholder="Ask me anything Ethiopia 🇪🇹"
 						/>
 						<button id="send-button" class="btn btn-primary">
 							<i class="fas fa-paper-plane"></i>

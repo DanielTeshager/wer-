@@ -31,3 +31,23 @@ sendButton.addEventListener("click", (e) => {
 			document.querySelector("#chat-messages").appendChild(messageElement);
 		});
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+	const scrollUpButton = document.getElementById("scroll-up-btn");
+	const scrollDownButton = document.getElementById("scroll-down-btn");
+	const chatDisplay = document.getElementById("chat-display");
+
+	scrollUpButton.addEventListener("click", () => {
+		chatDisplay.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
+	});
+
+	scrollDownButton.addEventListener("click", () => {
+		chatDisplay.scrollTo({
+			top: chatDisplay.scrollHeight,
+			behavior: "smooth",
+		});
+	});
+});
