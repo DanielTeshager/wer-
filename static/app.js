@@ -37,6 +37,15 @@ sendButton.addEventListener("click", (e) => {
 			messageElement.classList.add("message--received");
 			messageElement.innerHTML = data.response;
 			document.querySelector("#chat-messages").appendChild(messageElement);
+
+			// scroll to the bottom of the chat smoothly
+			chatMessages.scrollTo({
+				top: chatMessages.scrollHeight,
+				behavior: "smooth",
+			});
+
+			//focus on the input field
+			document.querySelector("#chat-input").focus();
 		});
 });
 
