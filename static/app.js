@@ -15,7 +15,7 @@ sendButton.addEventListener("click", (e) => {
 	messageElement.innerHTML = message;
 	document.querySelector("#chat-messages").appendChild(messageElement);
 
-	fetch("http://127.0.0.1:50002/get-response", {
+	fetch("/get-response", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
