@@ -2,7 +2,7 @@ const sendButton = document.querySelector("#send-button");
 
 sendButton.addEventListener("click", (e) => {
 	e.preventDefault();
-
+	document.querySelector(".loading-dots").style.display = "none";
 	// Get the message from the input field and add it to the chat
 	const message = document.querySelector("#chat-input").value;
 	const messageElement = document.createElement("div");
