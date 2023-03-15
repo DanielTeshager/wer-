@@ -11,8 +11,10 @@ sendButton.addEventListener("click", (e) => {
 	messageElement.innerHTML = message;
 	document.querySelector("#chat-messages").appendChild(messageElement);
 
-	// Show the loading animation
-	document.querySelector(".loading-dots").style.display = "flex";
+	// show loading... text on the input field
+	// disable the message input field
+	document.querySelector("#chat-input").value = "Loading...";
+	document.querySelector("#chat-input").disabled = true;
 
 	// Send the message to the Python Flask server using fetch
 	fetch("http://127.0.0.1:50002/get-response", {
@@ -26,7 +28,9 @@ sendButton.addEventListener("click", (e) => {
 		.then((response) => response.json())
 		.then((data) => {
 			// Hide the loading animation
-			document.querySelector(".loading-dots").style.display = "none";
+			// disable the message input field
+			document.querySelector("#chat-input").value = "";
+			document.querySelector("#chat-input").disabled = false;
 
 			const messageElement = document.createElement("div");
 			messageElement.classList.add("message");
