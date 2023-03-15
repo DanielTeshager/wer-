@@ -42,7 +42,7 @@ body {
 	overflow-y: scroll;
 	background-color: #fff;
 	padding: 10px;
-	padding-bottom: 60px; /* Add this line */
+	padding-bottom: 160px; /* Add this line */
 	border-radius: 5px;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 	margin-bottom: 20px;
@@ -51,7 +51,7 @@ body {
 
 #chat-form {
 	position: fixed;
-	bottom: 30px;
+	bottom: 10px;
 	left: 50%;
 	transform: translateX(-50%);
 	background-color: #fff;
@@ -67,7 +67,17 @@ body {
 #chat-form {
 	width: 100%;
 }
-
+#scroll-bottom-btn {
+	position: fixed;
+	right: 30px;
+	bottom: 80px;
+	z-index: 100;
+}
+#chat-form-container {
+	background-color: inherit;
+	padding: 10px;
+	position: relative;
+}
 /* Media queries */
 @media (max-width: 767.98px) {
 	#chat-messages,
