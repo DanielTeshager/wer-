@@ -37,6 +37,18 @@ body {
 	color: #333;
 	align-self: flex-start;
 }
+#chat-messages {
+	flex: 1;
+	overflow-y: scroll;
+	background-color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+	width: 70%;
+	max-width: 600px;
+}
+
 #chat-form {
 	position: fixed;
 	bottom: 30px;
@@ -50,4 +62,39 @@ body {
 	display: flex;
 	align-items: center;
 	width: 70%;
+	max-width: 600px;
+}
+
+/* Media queries */
+@media (max-width: 767.98px) {
+	#chat-messages,
+	#chat-form {
+		width: 100%;
+	}
+
+	#chat-form {
+		padding: 5px;
+		bottom: 10px;
+	}
+
+	.form-control {
+		font-size: 14px;
+		padding: 5px;
+	}
+
+	.btn-primary {
+		padding: 5px 10px;
+		font-size: 14px;
+	}
+
+	.message {
+		font-size: 14px;
+	}
+
+	#scroll-up-btn,
+	#scroll-down-btn {
+		width: 40px;
+		height: 40px;
+		font-size: 16px;
+	}
 }
