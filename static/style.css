@@ -105,6 +105,56 @@ body {
 }
 
 /* Media queries */
+/* Media queries for iPhone X and similar devices */
+@media (max-width: 812px) {
+	#chat-messages {
+		padding-bottom: 160px;
+		padding-top: 100px !important;
+	}
+
+	#chat-form {
+		bottom: 20px;
+	}
+
+	#scroll-bottom-btn {
+		bottom: 90px;
+	}
+}
+
+/* Media queries for smaller devices */
+@media (max-width: 767.98px) {
+	#chat-messages,
+	#chat-form {
+		width: 100%;
+	}
+
+	#chat-form {
+		padding: 5px;
+		bottom: 10px;
+	}
+
+	.form-control {
+		font-size: 14px;
+		padding: 5px;
+	}
+
+	.btn-primary {
+		padding: 5px 10px;
+		font-size: 14px;
+	}
+
+	.message {
+		font-size: 14px;
+	}
+
+	#scroll-up-btn,
+	#scroll-down-btn {
+		width: 40px;
+		height: 40px;
+		font-size: 16px;
+	}
+}
+
 @media (max-width: 767.98px) {
 	#chat-messages,
 	#chat-form {
