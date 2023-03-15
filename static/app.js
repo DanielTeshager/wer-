@@ -12,7 +12,7 @@ sendButton.addEventListener("click", (e) => {
 	document.querySelector("#chat-messages").appendChild(messageElement);
 
 	//Send the message to python flask server using fetch
-	fetch("http://127.0.0.1:50002/get-response", {
+	fetch("/get-response", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
