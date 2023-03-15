@@ -53,7 +53,7 @@ body {
 
 #chat-form {
 	position: fixed;
-	bottom: 40px;
+	bottom: 60px;
 	left: 50%;
 	transform: translateX(-50%);
 	background-color: #fff;
@@ -72,7 +72,7 @@ body {
 #scroll-bottom-btn {
 	position: fixed;
 	right: 30px;
-	bottom: 120px;
+	bottom: 130px;
 	z-index: 100;
 	background: none;
 	color: gray;
