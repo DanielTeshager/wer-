@@ -9,7 +9,7 @@ body {
 	height: calc(100% - 100px); /* Subtract footer height */
 	justify-content: center;
 	align-items: center;
-	padding-bottom: 50px; /* Add space for the footer */
+	padding-bottom: 80px; /* Add space for the footer */
 }
 #chat-messages {
 	flex: 1;
@@ -141,7 +141,7 @@ footer {
 
 	#chat-form {
 		padding: 5px;
-		bottom: 10px;
+		bottom: 93px;
 	}
 
 	.form-control {
@@ -163,6 +163,9 @@ footer {
 		width: 40px;
 		height: 40px;
 		font-size: 16px;
+	}
+	footer {
+		font-size: small;
 	}
 }
 
