@@ -8,6 +8,8 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 app.config['SESSION_TYPE'] = 'filesystem'
+app.config['SESSION_FILE_DIR'] = 'session_files'
+
 Session(app)
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
