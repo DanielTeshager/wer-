@@ -17,7 +17,7 @@ sendButton.addEventListener("click", (e) => {
 	document.querySelector("#chat-input").disabled = true;
 
 	// Send the message to the Python Flask server using fetch
-	fetch("http://127.0.0.1:50002/get-response", {
+	fetch("/get-response", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
