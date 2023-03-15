@@ -106,13 +106,12 @@ body {
 }
 
 footer {
-	position: fixed;
-	bottom: 0;
 	width: 100%;
 	padding: 25px 0;
 	text-align: center;
 	font-size: 14px;
 	background-color: #f5f5f5;
+	margin-top: 20px;
 }
 
 /* Media queries */
@@ -141,7 +140,7 @@ footer {
 
 	#chat-form {
 		padding: 5px;
-		bottom: 93px;
+		bottom: 80px;
 	}
 
 	.form-control {
@@ -157,47 +156,10 @@ footer {
 	.message {
 		font-size: 14px;
 	}
-
-	#scroll-up-btn,
-	#scroll-down-btn {
-		width: 40px;
-		height: 40px;
-		font-size: 16px;
+	#scroll-bottom-btn {
+		bottom: 160px; /* Adjust the bottom property to maintain the distance from the chat-form */
 	}
 	footer {
 		font-size: small;
-	}
-}
-
-@media (max-width: 767.98px) {
-	#chat-messages,
-	#chat-form {
-		width: 100%;
-	}
-
-	#chat-form {
-		padding: 5px;
-		bottom: 10px;
-	}
-
-	.form-control {
-		font-size: 14px;
-		padding: 5px;
-	}
-
-	.btn-primary {
-		padding: 5px 10px;
-		font-size: 14px;
-	}
-
-	.message {
-		font-size: 14px;
-	}
-
-	#scroll-up-btn,
-	#scroll-down-btn {
-		width: 40px;
-		height: 40px;
-		font-size: 16px;
 	}
 }
