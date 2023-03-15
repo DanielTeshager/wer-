@@ -79,6 +79,48 @@ body {
 	padding: 10px;
 	position: relative;
 }
+
+.loading-dots {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+
+.loading-dots span {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: #007bff;
+	margin: 0 3px;
+	animation: loadingDots 1.4s infinite;
+}
+
+.loading-dots span:nth-child(1) {
+	animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(2) {
+	animation-delay: 0.4s;
+}
+
+.loading-dots span:nth-child(3) {
+	animation-delay: 0.6s;
+}
+
+@keyframes loadingDots {
+	0%,
+	80%,
+	100% {
+		transform: scaleY(0.4);
+	}
+	40% {
+		transform: scaleY(1);
+	}
+}
+
 /* Media queries */
 @media (max-width: 767.98px) {
 	#chat-messages,

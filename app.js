@@ -3,7 +3,7 @@ const sendButton = document.querySelector("#send-button");
 sendButton.addEventListener("click", (e) => {
 	e.preventDefault();
 
-	//Get the message from input field and add it to the chat
+	// Get the message from the input field and add it to the chat
 	const message = document.querySelector("#chat-input").value;
 	const messageElement = document.createElement("div");
 	messageElement.classList.add("message");
@@ -11,7 +11,10 @@ sendButton.addEventListener("click", (e) => {
 	messageElement.innerHTML = message;
 	document.querySelector("#chat-messages").appendChild(messageElement);
 
-	//Send the message to python flask server using fetch
+	// Show the loading animation
+	document.querySelector(".loading-dots").style.display = "flex";
+
+	// Send the message to the Python Flask server using fetch
 	fetch("http://127.0.0.1:50002/get-response", {
 		method: "POST",
 		headers: {
@@ -19,9 +22,12 @@ sendButton.addEventListener("click", (e) => {
 		},
 		body: JSON.stringify({ message: message }),
 	})
-		//Get the response from python flask server
+		// Get the response from the Python Flask server
 		.then((response) => response.json())
 		.then((data) => {
+			// Hide the loading animation
+			document.querySelector(".loading-dots").style.display = "none";
+
 			const messageElement = document.createElement("div");
 			messageElement.classList.add("message");
 			messageElement.classList.add("message--received");
