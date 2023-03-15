@@ -59,5 +59,3 @@ def response():
     # response in json format
     return {"response": response}
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=50002, debug=True)
