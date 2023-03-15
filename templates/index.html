@@ -46,11 +46,7 @@
 					<span></span>
 				</div>
 			</div>
-			<button
-				id="scroll-bottom-btn"
-				class="btn btn-primary"
-				onclick="scrollToBottom()"
-			>
+			<button id="scroll-bottom-btn" class="btn btn-primary">
 				<i class="fas fa-arrow-down"></i>
 			</button>
 			<div id="chat-form-container">
@@ -79,11 +75,5 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		<!-- use flask templating to import app.js -->
 		<script src="{{ url_for('static', filename='app.js') }}"></script>
-		<script>
-			function scrollToBottom() {
-				const chatMessages = document.getElementById("chat-messages");
-				chatMessages.scrollTop = chatMessages.scrollHeight;
-			}
-		</script>
 	</body>
 </html>

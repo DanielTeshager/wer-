@@ -2,8 +2,8 @@ const sendButton = document.querySelector("#send-button");
 
 sendButton.addEventListener("click", (e) => {
 	e.preventDefault();
-
-	//Get the message from input field and add it to the chat
+	document.querySelector(".loading-dots").style.display = "none";
+	// Get the message from the input field and add it to the chat
 	const message = document.querySelector("#chat-input").value;
 	const messageElement = document.createElement("div");
 	messageElement.classList.add("message");
@@ -11,19 +11,27 @@ sendButton.addEventListener("click", (e) => {
 	messageElement.innerHTML = message;
 	document.querySelector("#chat-messages").appendChild(messageElement);
 
-	// remove the message from the input field
-	document.querySelector("#chat-input").value = "";
-	//Send the message to python flask server using fetch
-	fetch("/get-response", {
+	// show loading... text on the input field
+	// disable the message input field
+	document.querySelector("#chat-input").value = "Loading...";
+	document.querySelector("#chat-input").disabled = true;
+
+	// Send the message to the Python Flask server using fetch
+	fetch("http://127.0.0.1:50002/get-response", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
 		},
 		body: JSON.stringify({ message: message }),
 	})
-		//Get the response from python flask server
+		// Get the response from the Python Flask server
 		.then((response) => response.json())
 		.then((data) => {
+			// Hide the loading animation
+			// disable the message input field
+			document.querySelector("#chat-input").value = "";
+			document.querySelector("#chat-input").disabled = false;
+
 			const messageElement = document.createElement("div");
 			messageElement.classList.add("message");
 			messageElement.classList.add("message--received");
@@ -32,22 +40,13 @@ sendButton.addEventListener("click", (e) => {
 		});
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-	const scrollUpButton = document.getElementById("scroll-up-btn");
-	const scrollDownButton = document.getElementById("scroll-down-btn");
-	const chatDisplay = document.getElementById("chat-display");
+const chatMessages = document.getElementById("chat-messages");
+const scrollDown = document.querySelector("#scroll-bottom-btn");
 
-	scrollUpButton.addEventListener("click", () => {
-		chatDisplay.scrollTo({
-			top: 0,
-			behavior: "smooth",
-		});
-	});
-
-	scrollDownButton.addEventListener("click", () => {
-		chatDisplay.scrollTo({
-			top: chatDisplay.scrollHeight,
-			behavior: "smooth",
-		});
+scrollDown.addEventListener("click", () => {
+	// scroll to the bottom of the chat smoothly
+	chatMessages.scrollTo({
+		top: chatMessages.scrollHeight,
+		behavior: "smooth",
 	});
 });
