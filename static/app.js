@@ -11,6 +11,8 @@ sendButton.addEventListener("click", (e) => {
 	messageElement.innerHTML = message;
 	document.querySelector("#chat-messages").appendChild(messageElement);
 
+	// remove the message from the input field
+	document.querySelector("#chat-input").value = "";
 	//Send the message to python flask server using fetch
 	fetch("/get-response", {
 		method: "POST",
