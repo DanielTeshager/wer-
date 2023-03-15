@@ -15,6 +15,24 @@
 			rel="stylesheet"
 			href="{{ url_for('static', filename='style.css') }}"
 		/>
+		<style>
+			#scroll-bottom-btn {
+				position: fixed;
+				right: 30px;
+				bottom: 80px;
+				z-index: 100;
+			}
+			#chat-form-container {
+				background-color: inherit;
+				padding: 10px;
+				position: relative;
+			}
+			footer {
+				margin-top: 50px;
+				text-align: center;
+				font-size: 14px;
+			}
+		</style>
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -22,33 +40,28 @@
 		</nav>
 		<div class="container mt-5">
 			<div id="chat-messages" class="card p-3 mb-3"></div>
-			<button id="scroll-bottom-btn" class="btn btn-primary" onclick="scrollToBottom()">
-			  <i class="fas fa-arrow-down"></i>
+			<button
+				id="scroll-bottom-btn"
+				class="btn btn-primary"
+				onclick="scrollToBottom()"
+			>
+				<i class="fas fa-arrow-down"></i>
 			</button>
 			<div id="chat-form-container">
-			  <form id="chat-form">
-				<input
-				  type="text"
-				  class="form-control"
-				  id="chat-input"
-				  placeholder="Ask anything Ethiopia 🇪🇹"
-				/>
-				<button id="send-button" class="btn btn-primary">
-				  <i class="fas fa-paper-plane"></i>
-				</button>
-			  </form>
+				<form id="chat-form">
+					<input
+						type="text"
+						class="form-control"
+						id="chat-input"
+						placeholder="Ask anything Ethiopia 🇪🇹"
+					/>
+					<button id="send-button" class="btn btn-primary">
+						<i class="fas fa-paper-plane"></i>
+					</button>
+				</form>
 			</div>
-		  </div>
-
-		  <!-- footer -->
-		  <footer class="footer">
-			<div class="container">
-			  <span class="text-muted">
-				<a href="">ወሬ :: ChatGPT for Ethiopia 🇪🇹</a> is a project by <a href="https://twitter.com/danteshager">Daniel Teshager</a>
-			  </span>
-			</div>
-		  </footer>
-		</body>
+		</div>
+		<footer>&copy; 2023 ChatGPT for Ethiopia. All rights reserved.</footer>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -56,9 +69,9 @@
 		<script src="{{ url_for('static', filename='app.js') }}"></script>
 		<script>
 			function scrollToBottom() {
-			  const chatMessages = document.getElementById("chat-messages");
-			  chatMessages.scrollTop = chatMessages.scrollHeight;
+				const chatMessages = document.getElementById("chat-messages");
+				chatMessages.scrollTop = chatMessages.scrollHeight;
 			}
-		  </script>
+		</script>
 	</body>
 </html>
